@@ -5,7 +5,8 @@ public class Bairro {
     private String nomeBairro;
 
     public Bairro() {
-        // nada vem aqui
+        System.err.println();
+        // nada vem aqui 
     }
 
     public Bairro(int idBairro, String nomeBairro) {
