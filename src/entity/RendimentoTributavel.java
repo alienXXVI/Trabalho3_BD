@@ -4,16 +4,16 @@ public class RendimentoTributavel {
     private int idRendimento; // chave primária
     private int idEmpresa; // chave estrangeira;
     private int idContribuinte; // chave estrangeira;
-    private String INSS;
-    private String IRRFpago;
-    private Double valorRecebido;
-    private Double valorDecimoTerceiro;
+    private float INSS;
+    private float IRRFpago;
+    private float valorRecebido;
+    private float valorDecimoTerceiro;
 
     public RendimentoTributavel() {
         // Nada vem aqui
     }
 
-    public RendimentoTributavel(int idRendimento, int idEmpresa, int idContribuinte, String INSS, String IRRFpago, Double valorRecebido, Double valorDecimoTerceiro) {
+    public RendimentoTributavel(int idRendimento, int idEmpresa, int idContribuinte, float INSS, float IRRFpago, float valorRecebido, float valorDecimoTerceiro) {
         this.idRendimento = idRendimento;
         this.idEmpresa = idEmpresa;
         this.idContribuinte = idContribuinte;
@@ -54,42 +54,42 @@ public class RendimentoTributavel {
     }
 
     // Getter para INSS
-    public String getINSS() {
+    public float getINSS() {
         return INSS;
     }
 
     // Setter para INSS
-    public void setINSS(String INSS) {
+    public void setINSS(float INSS) {
         this.INSS = INSS;
     }
 
     // Getter para IRRFpago
-    public String getIRRFpago() {
+    public float getIRRFpago() {
         return IRRFpago;
     }
 
     // Setter para IRRFpago
-    public void setIRRFpago(String IRRFpago) {
+    public void setIRRFpago(float IRRFpago) {
         this.IRRFpago = IRRFpago;
     }
 
     // Getter para valorRecebido
-    public Double getValorRecebido() {
+    public float getValorRecebido() {
         return valorRecebido;
     }
 
     // Setter para valorRecebido
-    public void setValorRecebido(Double valorRecebido) {
+    public void setValorRecebido(float valorRecebido) {
         this.valorRecebido = valorRecebido;
     }
 
     // Getter para valorDecimoTerceiro
-    public Double getValorDecimoTerceiro() {
+    public float getValorDecimoTerceiro() {
         return valorDecimoTerceiro;
     }
 
     // Setter para valorDecimoTerceiro
-    public void setValorDecimoTerceiro(Double valorDecimoTerceiro) {
+    public void setValorDecimoTerceiro(float valorDecimoTerceiro) {
         this.valorDecimoTerceiro = valorDecimoTerceiro;
     }
 }

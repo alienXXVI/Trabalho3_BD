@@ -1,12 +1,12 @@
 package entity;
 
-import javax.xml.crypto.Data;
+import java.sql.Date;
 
 public class Contribuinte {
     private int idContribuinte; // chave primária
-    private String CPDcontribuinte;
+    private String CPFcontribuinte;
     private String nomeContribuinte;
-    private Data dataNascimento;
+    private Date dataNascimento;
     private int idEndereco;
     private String complemento;
     private int nroCasa;
@@ -15,9 +15,9 @@ public class Contribuinte {
         // nada vem aqui
     }
 
-    public Contribuinte(int idContribuinte, String CPDcontribuinte, String nomeContribuinte, Data dataNascimento, int idEndereco, String complemento, int nroCasa) {
+    public Contribuinte(int idContribuinte, String CPFcontribuinte, String nomeContribuinte, Date dataNascimento, int idEndereco, String complemento, int nroCasa) {
         this.idContribuinte = idContribuinte;
-        this.CPDcontribuinte = CPDcontribuinte;
+        this.CPFcontribuinte = CPFcontribuinte;
         this.nomeContribuinte = nomeContribuinte;
         this.dataNascimento = dataNascimento;
         this.idEndereco = idEndereco;
@@ -35,14 +35,14 @@ public class Contribuinte {
         this.idContribuinte = idContribuinte;
     }
 
-    // Getter para CPDcontribuinte
-    public String getCPDcontribuinte() {
-        return CPDcontribuinte;
+    // Getter para CPFcontribuinte
+    public String getCPFcontribuinte() {
+        return CPFcontribuinte;
     }
 
-    // Setter para CPDcontribuinte
-    public void setCPDcontribuinte(String CPDcontribuinte) {
-        this.CPDcontribuinte = CPDcontribuinte;
+    // Setter para CPFcontribuinte
+    public void setCPFcontribuinte(String CPFcontribuinte) {
+        this.CPFcontribuinte = CPFcontribuinte;
     }
 
     // Getter para nomeContribuinte
@@ -56,12 +56,12 @@ public class Contribuinte {
     }
 
     // Getter para dataNascimento
-    public Data getDataNascimento() {
+    public Date getDataNascimento() {
         return dataNascimento;
     }
 
     // Setter para dataNascimento
-    public void setDataNascimento(Data dataNascimento) {
+    public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -93,5 +93,16 @@ public class Contribuinte {
     // Setter para nroCasa
     public void setNroCasa(int nroCasa) {
         this.nroCasa = nroCasa;
+    }
+
+    public void imprimirDetalhes() {
+        System.out.println("ID Contribuinte: " + idContribuinte);
+        System.out.println("CPF: " + CPFcontribuinte);
+        System.out.println("Nome: " + nomeContribuinte);
+        System.out.println("Data de Nascimento: " + dataNascimento);
+        System.out.println("ID Endereço: " + idEndereco);
+        System.out.println("Complemento: " + complemento);
+        System.out.println("Número da Casa: " + nroCasa);
+        System.err.println();
     }
 }

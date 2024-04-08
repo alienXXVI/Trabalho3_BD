@@ -4,6 +4,8 @@ public class Bairro {
     private int idBairro; // chave primária
     private String nomeBairro;
 
+    private Cidade cidade;
+
     public Bairro() {
         System.err.println();
         // nada vem aqui 
@@ -12,6 +14,10 @@ public class Bairro {
     public Bairro(int idBairro, String nomeBairro) {
         this.idBairro = idBairro;
         this.nomeBairro = nomeBairro;
+    }
+
+    public void setCidade(Cidade cidade) {
+        this.cidade = cidade;
     }
 
     // Getter para idBairro

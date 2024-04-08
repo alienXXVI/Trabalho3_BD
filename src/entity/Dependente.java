@@ -1,24 +1,33 @@
 package entity;
 
-import javax.xml.crypto.Data;
+import java.sql.Date;
 
 public class Dependente {
     private int idDependente; // chave primária
     private int idGrauParentesco; // chave estrangeira
     private String CPFdependente;
     private String nomeDependente;
-    private Data dataNascimento;
+    private Date dataNascimento;
+    private int idContribuinte;
+
+    private GrauParentesco grauParentesco;
 
     public Dependente() {
         // Nada vem aqui
     }
 
-    public Dependente(int idDependente, int idGrauParentesco, String CPFdependente, String nomeDependente, Data dataNascimento) {
+    public Dependente(int idDependente, String CPFdependente, String nomeDependente, Date dataNascimento, int idGrauParentesco, int idContribuinte) {
         this.idDependente = idDependente;
         this.idGrauParentesco = idGrauParentesco;
         this.CPFdependente = CPFdependente;
         this.nomeDependente = nomeDependente;
         this.dataNascimento = dataNascimento;
+        this.idContribuinte = idContribuinte;
+    }
+
+    // Método para associar um GrauParentesco a um dependente
+    public void setGrauParentesco(GrauParentesco grauParentesco) {
+        this.grauParentesco = grauParentesco;
     }
 
     // Getter para idDependente
@@ -62,12 +71,20 @@ public class Dependente {
     }
 
     // Getter para dataNascimento
-    public Data getDataNascimento() {
+    public Date getDataNascimento() {
         return dataNascimento;
     }
 
     // Setter para dataNascimento
-    public void setDataNascimento(Data dataNascimento) {
+    public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
+    }
+
+    public int getIdContribuinte() {
+        return idContribuinte;
+    }
+
+    public void setIdContribuinte(int idContribuinte) {
+        this.idContribuinte = idContribuinte;
     }
 }

@@ -1,5 +1,6 @@
 package DAO;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,10 +9,28 @@ import java.util.List;
 
 import conexao.Conexao;
 import entity.Bairro;
+import entity.Cidade;
 
 public class BairroDAO {
 
-        public List<Bairro> listarBairros(){
+    public void InserirBairro(Bairro bairro){
+        String sql = "INSERT INTO bairro (idBairro, nomeBairro) VALUES ( ?, ?)";
+
+        PreparedStatement ps = null;
+
+        try{
+            ps = Conexao.getConexao().prepareStatement(sql);
+            ps.setInt(1, bairro.getIdBairro());
+            ps.setString(2, bairro.getNomeBairro());
+
+            ps.execute();
+            ps.close();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    public List<Bairro> listarBairros(){
         List<Bairro> listaBairros = new ArrayList<Bairro>();
 
         try {
@@ -36,18 +55,18 @@ public class BairroDAO {
     }
 
     public static void imprimirBairros(List<Bairro> bairros) throws SQLException {
-
-        System.out.println("+-------------------------------------------------------------------------------------------+");
-        System.out.printf("| %-15d |", "idAluno");
-        System.out.printf(" %-15s |", "nomeBairro");
-        System.out.println("+--------------------------------------------------------------------------------------------+");
+        System.err.println("-- Bairros --");
+        System.out.printf("%s - ", "idBairro");
+        System.out.printf("%s", "nomeBairro");
+        System.err.println();
 
         for (int i = 0; i < bairros.size(); i++) {
-            System.out.print(" ");
+            System.out.print("");
             System.out.print(bairros.get(i).getIdBairro());
-            System.out.print("  |  ");
+            System.out.print(" - ");
             System.out.print(bairros.get(i).getNomeBairro());
             System.out.println("");
         }
+        System.err.println();
     }
 }
